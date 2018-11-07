@@ -57,8 +57,8 @@ describe('Email notifications', function() {
                 from: 'bws@dummy.net',
                 subjectPrefix: '[test wallet]',
                 publicTxUrlTemplate: {
-                  livenet: 'https://insight.bitpay.com/tx/{{txid}}',
-                  testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
+                  livenet: 'https://insight.bitzec.com/tx/{{txid}}',
+                  testnet: 'https://test-insight.bitzec.com/tx/{{txid}}',
                 },
               },
             }, function(err) {
@@ -169,7 +169,7 @@ describe('Email notifications', function() {
             txp = t;
             async.eachSeries(_.range(2), function(i, next) {
               var copayer = TestData.copayers[i];
-              helpers.getAuthServer(copayer.id44btcz, function(server) {
+              helpers.getAuthServer(copayer.id44bzc, function(server) {
                 var signatures = helpers.clientSign(txp, copayer.xPrivKey_44H_0H_0H);
                 server.signTx({
                   txProposalId: txp.id,
@@ -201,7 +201,7 @@ describe('Email notifications', function() {
             one.subject.should.contain('Payment sent');
             one.text.should.contain('800,000');
             should.exist(one.html);
-            one.html.should.contain('https://insight.bitpay.com/tx/' + txp.txid);
+            one.html.should.contain('https://insight.bitzec.com/tx/' + txp.txid);
             server.storage.fetchUnsentEmails(function(err, unsent) {
               should.not.exist(err);
               unsent.should.be.empty;
@@ -235,7 +235,7 @@ describe('Email notifications', function() {
             txpId = txp.id;
             async.eachSeries(_.range(1, 3), function(i, next) {
               var copayer = TestData.copayers[i];
-              helpers.getAuthServer(copayer.id44btcz, function(server) {
+              helpers.getAuthServer(copayer.id44bzc, function(server) {
                 server.rejectTx({
                   txProposalId: txp.id,
                 }, next);
@@ -368,7 +368,7 @@ describe('Email notifications', function() {
       server.savePreferences({
         email: 'copayer1@domain.com',
         language: 'es',
-        unit: 'btcz',
+        unit: 'bzc',
       }, function(err) {
         server.createAddress({}, function(err, address) {
           should.not.exist(err);
@@ -472,8 +472,8 @@ describe('Email notifications', function() {
                 from: 'bws@dummy.net',
                 subjectPrefix: '[test wallet]',
                 publicTxUrlTemplate: {
-                  livenet: 'https://insight.bitpay.com/tx/{{txid}}',
-                  testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
+                  livenet: 'https://insight.bitzec.com/tx/{{txid}}',
+                  testnet: 'https://test-insight.bitzec.com/tx/{{txid}}',
                 },
               },
             }, function(err) {

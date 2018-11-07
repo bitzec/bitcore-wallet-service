@@ -18,7 +18,7 @@ npm start
 ### Install BWS from github source
 Use the following steps to Install BWS from github source and run it with defaults.
 ```bash
-git clone https://github.com/bitpay/bitcore-wallet-service.git
+git clone https://github.com/bitzec/bitcore-wallet-service.git
 cd bitcore-wallet-service
 npm install
 ```
@@ -27,7 +27,7 @@ To change configuration before running, see the Configuration section.
 npm start
 ```
 ### Configuration
-Configuration for all required modules can be specified in https://github.com/bitpay/bitcore-wallet-service/blob/master/config.js
+Configuration for all required modules can be specified in https://github.com/bitzec/bitcore-wallet-service/blob/master/config.js
 
 BWS is composed of 5 separate node services -
 Locker - locker/locker.js
@@ -73,11 +73,11 @@ An example of this configuration is:
   blockchainExplorerOpts: {
     livenet: {
       provider: 'insight',
-      url: 'https://insight.bitpay.com:443',
+      url: 'https://insight.bitzec.com:443',
     },
     testnet: {
       provider: 'insight',
-      url: 'https://test-insight.bitpay.com:443',
+      url: 'https://test-insight.bitzec.com:443',
     },
   }
 ```

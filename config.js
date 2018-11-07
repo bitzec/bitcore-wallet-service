@@ -38,36 +38,36 @@ var config = {
     },
   },
   blockchainExplorerOpts: {
-    btcz: {
+    bzc: {
       livenet: {
         provider: 'insight',
-        url: 'https://bitcoinz.ph:443',
+        url: 'https://bitzec.org:443',
       },
       testnet: {
         provider: 'insight',
-        url: 'https://bitcoinz.ph:443',
+        url: 'https://bitzec.org:443',
         // url: 'http://localhost:3001',
         // Multiple servers (in priority order)
-        // url: ['http://a.b.c', 'https://test-insight.bitpay.com:443'],
+        // url: ['http://a.b.c', 'https://test-insight.bitzec.com:443'],
       },
     },
     bch: {
       livenet: {
         provider: 'insight',
-        url: 'https://bch-insight.bitpay.com',
+        url: 'https://bch-insight.bitzec.com',
       },
     },
   },
   pushNotificationsOpts: {
     templatePath: './lib/templates',
     defaultLanguage: 'en',
-    defaultUnit: 'btcz',
+    defaultUnit: 'bzc',
     subjectPrefix: '',
     pushServerUrl: 'https://fcm.googleapis.com/fcm',
     authorizationKey: '',
   },
   fiatRateServiceOpts: {
-    defaultProvider: 'BitPay',
+    defaultProvider: 'bitzec',
     fetchInterval: 60, // in minutes
   },
   // To use email notifications uncomment this:
@@ -79,10 +79,10 @@ var config = {
   //  from: 'wallet-service@bitcore.io',
   //  templatePath: './lib/templates',
   //  defaultLanguage: 'en',
-  //  defaultUnit: 'btcz',
+  //  defaultUnit: 'bzc',
   //  publicTxUrlTemplate: {
-  //    livenet: 'https://insight.bitpay.com/tx/{{txid}}',
-  //    testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
+  //    livenet: 'https://insight.bitzec.com/tx/{{txid}}',
+  //    testnet: 'https://test-insight.bitzec.com/tx/{{txid}}',
   //  },
   //},
   //

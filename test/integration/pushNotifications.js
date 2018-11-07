@@ -72,7 +72,7 @@ describe('Push notifications', function() {
               pushNotificationsOpts: {
                 templatePath: './lib/templates',
                 defaultLanguage: 'en',
-                defaultUnit: 'btcz',
+                defaultUnit: 'bzc',
                 subjectPrefix: '',
                 pushServerUrl: 'http://localhost:8000',
                 authorizationKey: 'secret',
@@ -245,7 +245,7 @@ describe('Push notifications', function() {
       server.savePreferences({
         email: 'copayer1@domain.com',
         language: 'es',
-        unit: 'btcz',
+        unit: 'bzc',
       }, function(err) {
         server.createAddress({}, function(err, address) {
           should.not.exist(err);
@@ -369,7 +369,7 @@ describe('Push notifications', function() {
             txpId = txp.id;
             async.eachSeries(_.range(1, 3), function(i, next) {
               var copayer = TestData.copayers[i];
-              helpers.getAuthServer(copayer.id44btcz, function(server) {
+              helpers.getAuthServer(copayer.id44bzc, function(server) {
                 server.rejectTx({
                   txProposalId: txp.id,
                 }, next);
@@ -414,7 +414,7 @@ describe('Push notifications', function() {
             txp = t;
             async.eachSeries(_.range(1, 3), function(i, next) {
               var copayer = TestData.copayers[i];
-              helpers.getAuthServer(copayer.id44btcz, function(s) {
+              helpers.getAuthServer(copayer.id44bzc, function(s) {
                 server = s;
                 var signatures = helpers.clientSign(txp, copayer.xPrivKey_44H_0H_0H);
                 server.signTx({

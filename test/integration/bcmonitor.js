@@ -49,7 +49,7 @@ describe('Blockchain monitor', function() {
           messageBroker: server.messageBroker,
           storage: storage,
           blockchainExplorers: {
-            'btcz': {
+            'bzc': {
               'testnet': blockchainExplorer,
               'livenet': blockchainExplorer
             }

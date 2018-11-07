@@ -10,7 +10,7 @@ var log = require('npmlog');
 log.debug = log.verbose;
 log.level = 'info';
 
-var Bitcore = require('bitcore-lib-btcz');
+var Bitcore = require('bitcore-lib-bzc');
 
 var Common = require('../../lib/common');
 var Utils = Common.Utils;
@@ -1189,7 +1189,7 @@ describe('Wallet service', function() {
           address.network.should.equal('livenet');
           address.address.should.equal('t3PhdGQfVFF6BzKDPB1Y6JgMC2UwnE1BuDx');
           address.isChange.should.be.false;
-          address.coin.should.equal('btcz');
+          address.coin.should.equal('bzc');
           address.path.should.equal('m/0/0');
           address.type.should.equal('P2SH');
           server.getNotifications({}, function(err, notifications) {
@@ -1244,7 +1244,7 @@ describe('Wallet service', function() {
         helpers.createAndJoinWallet(1, 1, function(s, w) {
           server = s;
           wallet = w;
-          w.copayers[0].id.should.equal(TestData.copayers[0].id44btcz);
+          w.copayers[0].id.should.equal(TestData.copayers[0].id44bzc);
           done();
         });
       });
@@ -1623,7 +1623,7 @@ describe('Wallet service', function() {
       var requestPubKeyStr = requestPubKey.toString();
       var sig = helpers.signRequestPubKey(requestPubKeyStr, xPrivKey);
 
-      var copayerId = Model.Copayer._xPubToCopayerId('btcz', TestData.copayers[0].xPubKey_44H_0H_0H);
+      var copayerId = Model.Copayer._xPubToCopayerId('bzc', TestData.copayers[0].xPubKey_44H_0H_0H);
       opts = {
         copayerId: copayerId,
         requestPubKey: requestPubKeyStr,
@@ -2164,7 +2164,7 @@ describe('Wallet service', function() {
     before(function() {
       levels = Defaults.FEE_LEVELS;
       Defaults.FEE_LEVELS = {
-        btcz: [{
+        bzc: [{
           name: 'urgent',
           nbBlocks: 1,
           multiplier: 1.5,
@@ -2235,7 +2235,7 @@ describe('Wallet service', function() {
         fees = _.zipObject(_.map(fees, function(item) {
           return [item.level, item.feePerKb];
         }));
-        var defaults = _.zipObject(_.map(Defaults.FEE_LEVELS['btcz'], function(item) {
+        var defaults = _.zipObject(_.map(Defaults.FEE_LEVELS['bzc'], function(item) {
           return [item.name, item.defaultValue];
         }));
         fees.priority.should.equal(defaults.priority);
@@ -2298,7 +2298,7 @@ describe('Wallet service', function() {
       });
     });
     it('should get monotonically decreasing fee values', function(done) {
-      _.find(Defaults.FEE_LEVELS['btcz'], {
+      _.find(Defaults.FEE_LEVELS['bzc'], {
         nbBlocks: 6
       }).defaultValue.should.equal(25000);
       helpers.stubFeeLevels({
@@ -2402,14 +2402,14 @@ describe('Wallet service', function() {
   });
 
   var addrMap = {
-    btcz: 't1h8SqgtM3QM5e2M8EzhhT1yL2PXXtA6oqe',
+    bzc: 't1h8SqgtM3QM5e2M8EzhhT1yL2PXXtA6oqe',
   }
 
   var idKeyMap = {
-      btcz: 'id44btcz',
+      bzc: 'id44bzc',
   };
 
-  _.each(['btcz'], function(coin) {
+  _.each(['bzc'], function(coin) {
 
     describe('#createTx ' + coin, function() {
       var addressStr, idKey;
@@ -2994,8 +2994,8 @@ describe('Wallet service', function() {
         describe('Fee levels', function() {
           it('should create a tx specifying feeLevel', function(done) {
             //ToDo
-            var level = wallet.coin == 'btcz' ? 'economy' : 'normal';
-            var expected = wallet.coin == 'btcz' ? 180e2 : 200e2;
+            var level = wallet.coin == 'bzc' ? 'economy' : 'normal';
+            var expected = wallet.coin == 'bzc' ? 180e2 : 200e2;
             helpers.stubFeeLevels({
               1: 400e2,
               2: 200e2,
@@ -3840,7 +3840,7 @@ describe('Wallet service', function() {
         });
       });
       it('should select unconfirmed utxos if not enough confirmed utxos', function(done) {
-        helpers.stubUtxos(server, wallet, ['u 1btcz', '0.5btcz'], function() {
+        helpers.stubUtxos(server, wallet, ['u 1bzc', '0.5bzc'], function() {
           var txOpts = {
             outputs: [{
               toAddress: 't1h8SqgtM3QM5e2M8EzhhT1yL2PXXtA6oqe',
@@ -6642,7 +6642,7 @@ describe('Wallet service', function() {
 
           blockchainExplorer.getBlockchainHeight = sinon.stub().callsArgWith(0, null, 2000);
           server._notify('NewBlock', {
-            coin: 'btcz',
+            coin: 'bzc',
             network: 'livenet',
             hash: 'dummy hash',
           }, {
@@ -7551,7 +7551,7 @@ describe('Wallet service', function() {
       });
     });
     it('should get wallet from tx proposal', function(done) {
-      helpers.stubUtxos(server, wallet, '1 btcz', function() {
+      helpers.stubUtxos(server, wallet, '1 bzc', function() {
         helpers.stubBroadcast();
         var txOpts = {
           outputs: [{
