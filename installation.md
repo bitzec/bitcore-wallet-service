@@ -7,8 +7,8 @@ See the configuration section to configure a different host/port.
 ### Install BWS from NPM
 Use the following steps to Install BWS from the npmjs repository and run it with defaults.
 ```bash
-npm install bitcore-wallet-service
-cd bitcore-wallet-service
+npm install bitcore-wallet-service-bzc
+cd bitcore-wallet-service-bzc
 ```
 To change configuration before running, see the Configuration section.
 ```bash
@@ -18,8 +18,8 @@ npm start
 ### Install BWS from github source
 Use the following steps to Install BWS from github source and run it with defaults.
 ```bash
-git clone https://github.com/bitzec/bitcore-wallet-service.git
-cd bitcore-wallet-service
+git clone https://github.com/bitzec/bitcore-wallet-service-bzc.git
+cd bitcore-wallet-service-bzc
 npm install
 ```
 To change configuration before running, see the Configuration section.
@@ -27,7 +27,7 @@ To change configuration before running, see the Configuration section.
 npm start
 ```
 ### Configuration
-Configuration for all required modules can be specified in https://github.com/bitzec/bitcore-wallet-service/blob/master/config.js
+Configuration for all required modules can be specified in https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/config.js
 
 BWS is composed of 5 separate node services -
 Locker - locker/locker.js

@@ -1,9 +1,9 @@
 
-# bitcore-wallet-service
+# bitcore-wallet-service-bzc
 
-[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-service.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-service)
-[![Build Status](https://img.shields.io/travis/bitzec/bitcore-wallet-service.svg?branch=master&style=flat-square)](https://travis-ci.org/bitzec/bitcore-wallet-service)
-[![Coverage Status](https://coveralls.io/repos/bitzec/bitcore-wallet-service/badge.svg?branch=master)](https://coveralls.io/r/bitzec/bitcore-wallet-service?branch=master)
+[![NPM Package](https://img.shields.io/npm/v/bitcore-wallet-service-bzc.svg?style=flat-square)](https://www.npmjs.org/package/bitcore-wallet-service-bzc)
+[![Build Status](https://img.shields.io/travis/bitzec/bitcore-wallet-service-bzc.svg?branch=master&style=flat-square)](https://travis-ci.org/bitzec/bitcore-wallet-service-bzc)
+[![Coverage Status](https://coveralls.io/repos/bitzec/bitcore-wallet-service-bzc/badge.svg?branch=master)](https://coveralls.io/r/bitzec/bitcore-wallet-service-bzc?branch=master)
 
 A Multisig HD Bitcore Wallet Service.
 
@@ -13,7 +13,7 @@ Bitcore Wallet Service facilitates multisig HD wallets creation and operation th
 
 BWS can usually be installed within minutes and accommodates all the needed infrastructure for peers in a multisig wallet to communicate and operate – with minimum server trust.
 
-See [Bitcore-wallet-client](https://github.com/bitzec/bitcore-wallet-client-bzc) for the *official* client library that communicates to BWS and verifies its response. Also check [Bitcore-wallet](https://github.com/bitzec/bitcore-wallet) for a simple CLI wallet implementation that relies on BWS.
+See [bitcore-wallet-client-bzc](https://github.com/bitzec/bitcore-wallet-client-bzc) for the *official* client library that communicates to BWS and verifies its response. Also check [Bitcore-wallet](https://github.com/bitzec/bitcore-wallet) for a simple CLI wallet implementation that relies on BWS.
 
 BWS is been used in production enviroments for [Copay Wallet](https://copay.io), [bitzec App wallet](https://bitzec.com/wallet) and others.  
 
@@ -21,15 +21,15 @@ More about BWS at https://blog.bitzec.com/announcing-the-bitcore-wallet-suite/
 
 # Getting Started
 ```
- git clone https://github.com/bitzec/bitcore-wallet-service.git
- cd bitcore-wallet-service && npm start
+ git clone https://github.com/bitzec/bitcore-wallet-service-bzc.git
+ cd bitcore-wallet-service-bzc && npm start
 ```
 
 This will launch the BWS service (with default settings) at `http://localhost:3232/bws/api`.
 
 BWS needs mongoDB. You can configure the connection at `config.js`
 
-BWS supports SSL and Clustering. For a detailed guide on installing BWS with extra features see [Installing BWS](https://github.com/bitzec/bitcore-wallet-service/blob/master/installation.md).
+BWS supports SSL and Clustering. For a detailed guide on installing BWS with extra features see [Installing BWS](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/installation.md).
 
 BWS uses by default a Request Rate Limitation to CreateWallet endpoint. If you need to modify it, check defaults.js' `Defaults.RateLimit`
 
@@ -59,7 +59,7 @@ See [Bitcore Wallet Client](https://github.com/bitzec/bitcore-wallet-client-bzc/
 `/v1/wallets/`: Get wallet information
 
 Returns:
- * Wallet object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/wallet.js)).
+ * Wallet object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/wallet.js)).
 
 `/v1/txhistory/`: Get Wallet's transaction history
 
@@ -83,12 +83,12 @@ Returns:
 
 `/v1/txproposals/`:  Get Wallet's pending transaction proposals and their status
 Returns:
- * List of pending TX Proposals. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js))
+ * List of pending TX Proposals. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js))
 
 `/v1/addresses/`: Get Wallet's main addresses (does not include change addresses)
 
 Returns:
- * List of Addresses object: (https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/address.js)).  This call is mainly provided so the client check this addresses for incoming transactions (using a service like [Insight](https://insight.is)
+ * List of Addresses object: (https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/address.js)).  This call is mainly provided so the client check this addresses for incoming transactions (using a service like [Insight](https://insight.is)
 
 `/v1/balance/`:  Get Wallet's balance
 
@@ -153,13 +153,13 @@ Required Arguments:
  * (opt) excludeUnconfirmedUtxos: Do not use UTXOs of unconfirmed transactions as inputs for this TX.
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
 
 
 `/v1/addresses/`: Request a new main address from wallet
 
 Returns:
- * Address object: (https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/address.js)). Note that `path` is returned so client can derive the address independently and check server's response.
+ * Address object: (https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/address.js)). Note that `path` is returned so client can derive the address independently and check server's response.
 
 `/v1/txproposals/:id/signatures/`: Sign a transaction proposal
 
@@ -167,17 +167,17 @@ Required Arguments:
  * signatures:  All Transaction's input signatures, in order of appearance.
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/txproposals/:id/broadcast/`: Broadcast a transaction proposal
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/txproposals/:id/rejections`: Reject a transaction proposal
 
 Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js)). `.status` is probably needed in this case.
 
 `/v1/addresses/scan`: Start an address scan process looking for activity.
 
@@ -196,7 +196,7 @@ Required Arguments:
 `/v1/txproposals/:id/`: Deletes a transaction proposal. Only the creator can delete a TX Proposal, and only if it has no other signatures or rejections
 
  Returns:
- * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
+ * TX Proposal object. (see [fields on the source code](https://github.com/bitzec/bitcore-wallet-service-bzc/blob/master/lib/model/txproposal.js)). `.id` is probably needed in this case.
 
 `/v1/txconfirmations/:txid`: Unsubscribe from transaction `txid` and no longer listen to its confirmation.
 
@@ -219,4 +219,4 @@ Required Arguments:
 
 
 
-# bitcore-wallet-service
+# bitcore-wallet-service-bzc

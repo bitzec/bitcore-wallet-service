@@ -1,5 +1,5 @@
 {
-  "name": "bitcore-wallet-service",
+  "name": "bitcore-wallet-service-bzc",
   "description": "A service for Mutisig HD Bitcoin Wallets",
   "author": "The bitzec Community",
   "version": "1.0.0",
@@ -13,11 +13,11 @@
     "BWS"
   ],
   "repository": {
-    "url": "git@github.com:bitzec/bitcore-wallet-service.git",
+    "url": "git@github.com:bitzec/bitcore-wallet-service-bzc.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/bitzec/bitcore-wallet-service/issues"
+    "url": "https://github.com/bitzec/bitcore-wallet-service-bzc/issues"
   },
   "dependencies": {
     "async": "^0.9.2",
