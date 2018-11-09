@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "async": "^0.9.2",
-    "bitcore-lib-bzc": "https://github.com/bitzec/bitcore-lib-bzc.git#v1.0.0",
-    "bitcore-lib-cash": "https://github.com/bitzec/bitcore-lib.git#cash",
+    "bitcore-lib-bzc": "https://github.com/bitzec/bitcore-lib-bzc.git",
+    "bitcore-lib-cash": "https://github.com/bitzec/bitcore-lib-bzc.git",
     "body-parser": "^1.11.0",
     "compression": "^1.6.2",
     "coveralls": "^2.11.2",

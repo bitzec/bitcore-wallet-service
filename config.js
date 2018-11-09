@@ -41,11 +41,11 @@ var config = {
     bzc: {
       livenet: {
         provider: 'insight',
-        url: 'https://bitzec.org:443',
+        url: 'https://bitzec.cf:443',
       },
       testnet: {
         provider: 'insight',
-        url: 'https://bitzec.org:443',
+        url: 'https://bitzec.cf:443',
         // url: 'http://localhost:3001',
         // Multiple servers (in priority order)
         // url: ['http://a.b.c', 'https://test-insight.bitzec.com:443'],
