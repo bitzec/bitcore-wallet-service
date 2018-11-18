@@ -12,7 +12,7 @@ var tingodb = require('tingodb')({
   memStore: true
 });
 
-var Bitcore = require('bitcore-lib-bzc');
+var Bitcore = require('bitcore-lib-bitzec');
 var Bitcore_ = {
   bzc: Bitcore,
   bch: require('bitcore-lib-cash')
