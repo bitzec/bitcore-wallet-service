@@ -10,7 +10,7 @@ var log = require('npmlog');
 log.debug = log.verbose;
 log.level = 'info';
 
-var Bitcore = require('bitcore-lib-bitzec');
+var Bitcore = require('bitcore-lib-bzc');
 
 var Common = require('../../lib/common');
 var Utils = Common.Utils;

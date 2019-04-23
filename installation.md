@@ -73,11 +73,11 @@ An example of this configuration is:
   blockchainExplorerOpts: {
     livenet: {
       provider: 'insight',
-      url: 'https://insight.bitzec.com:443',
+      url: 'http://35.204.174.237:3001',
     },
     testnet: {
       provider: 'insight',
-      url: 'https://test-insight.bitzec.com:443',
+      url: 'http://35.204.174.237:3001',
     },
   }
 ```

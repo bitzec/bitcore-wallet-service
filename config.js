@@ -41,22 +41,13 @@ var config = {
     bzc: {
       livenet: {
         provider: 'insight',
-        url: 'https://bitzec.cf:443',
+        url: 'http://35.204.174.237:3001',
       },
       testnet: {
         provider: 'insight',
-        url: 'https://bitzec.cf:443',
-        // url: 'http://localhost:3001',
-        // Multiple servers (in priority order)
-        // url: ['http://a.b.c', 'https://test-insight.bitzec.com:443'],
+        url: 'http://35.204.174.237:3001',
       },
-    },
-    bch: {
-      livenet: {
-        provider: 'insight',
-        url: 'https://bch-insight.bitzec.com',
-      },
-    },
+    }
   },
   pushNotificationsOpts: {
     templatePath: './lib/templates',
@@ -67,7 +58,7 @@ var config = {
     authorizationKey: '',
   },
   fiatRateServiceOpts: {
-    defaultProvider: 'bitzec',
+    defaultProvider: 'BitPay',
     fetchInterval: 60, // in minutes
   },
   // To use email notifications uncomment this:
@@ -81,8 +72,8 @@ var config = {
   //  defaultLanguage: 'en',
   //  defaultUnit: 'bzc',
   //  publicTxUrlTemplate: {
-  //    livenet: 'https://insight.bitzec.com/tx/{{txid}}',
-  //    testnet: 'https://test-insight.bitzec.com/tx/{{txid}}',
+  //    livenet: 'https://insight.bitpay.com/tx/{{txid}}',
+  //    testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
   //  },
   //},
   //
