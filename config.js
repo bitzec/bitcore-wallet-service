@@ -41,11 +41,11 @@ var config = {
     bzc: {
       livenet: {
         provider: 'insight',
-        url: 'http://35.204.174.237:3001',
+        url: 'http://35.242.189.203:3001/insight/',
       },
       testnet: {
         provider: 'insight',
-        url: 'http://35.204.174.237:3001',
+        url: 'http://35.242.189.203:3001/insight/',
       },
     }
   },
